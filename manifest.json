@@ -2,20 +2,20 @@
   "name": "英语单词卡片学习系统",
   "short_name": "单词卡片",
   "description": "一个离线可用的英语单词卡片学习应用",
-  "start_url": "/index.html",
+  "start_url": "/wordcards-pwa/index.html",
   "display": "standalone",
   "background_color": "#f5f7fa",
   "theme_color": "#3498db",
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "images/icon-192.png",
+      "src": "/wordcards-pwa/images/icon-192.png",
       "type": "image/png",
       "sizes": "192x192",
       "purpose": "any maskable"
     },
     {
-      "src": "images/icon-512.png",
+      "src": "/wordcards-pwa/images/icon-512.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "any maskable"
@@ -27,14 +27,14 @@
       "short_name": "学习",
       "description": "开始学习单词卡片",
       "url": "/index.html?action=study",
-      "icons": [{ "src": "images/icon-192.png", "sizes": "192x192" }]
+      "icons": [{ "src": "/wordcards-pwa/images/icon-192.png", "sizes": "192x192" }]
     },
     {
       "name": "创建卡片",
       "short_name": "创建",
       "description": "创建新的单词卡片",
       "url": "/index.html?action=create",
-      "icons": [{ "src": "images/icon-192.png", "sizes": "192x192" }]
+      "icons": [{ "src": "/wordcards-pwa/images/icon-192.png", "sizes": "192x192" }]
     }
   ]
 }
