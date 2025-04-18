@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#3498db">
+    <title>英语单词卡片学习系统</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="images/icon-192.png">
+    <link rel="shortcut icon" href="images/favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <div class="tab active" data-tab="cards">单词卡片</div>
+            <div class="tab" data-tab="logs">学习日志</div>
+        </div>
+
+        <div class="tab-content active" id="cards-tab">
+            <h1>英语单词卡片学习系统</h1>
+            
+            <div class="filters">
+                <h2>过滤卡片</h2>
+                <div class="filters-grid">
+                    <div class="filter-group">
+                        <div class="filter-label">一级分类</div>
+                        <div class="dropdown-container" data-filter="category1">
+                            <button class="dropdown-btn">选择一级分类</button>
+                            <div class="dropdown-content">
+                                <div class="dropdown-actions">
+                                    <button class="select-all">全选</button>
+                                    <button class="deselect-all">全不选</button>
+                                    <button class="invert-selection">反选</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <div class="filter-label">二级分类</div>
+                        <div class="dropdown-container" data-filter="category2">
+                            <button class="dropdown-btn">选择二级分类</button>
+                            <div class="dropdown-content">
+                                <div class="dropdown-actions">
+                                    <button class="select-all">全选</button>
+                                    <button class="deselect-all">全不选</button>
+                                    <button class="invert-selection">反选</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <div class="filter-label">三级分类</div>
+                        <div class="dropdown-container" data-filter="category3">
+                            <button class="dropdown-btn">选择三级分类</button>
+                            <div class="dropdown-content">
+                                <div class="dropdown-actions">
+                                    <button class="select-all">全选</button>
+                                    <button class="deselect-all">全不选</button>
+                                    <button class="invert-selection">反选</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <div class="filter-label">四级分类</div>
+                        <div class="dropdown-container" data-filter="category4">
+                            <button class="dropdown-btn">选择四级分类</button>
+                            <div class="dropdown-content">
+                                <div class="dropdown-actions">
+                                    <button class="select-all">全选</button>
+                                    <button class="deselect-all">全不选</button>
+                                    <button class="invert-selection">反选</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <div class="filter-label">难度</div>
+                        <div class="dropdown-container" data-filter="difficulty">
+                            <button class="dropdown-btn">选择难度</button>
+                            <div class="dropdown-content">
+                                <div class="dropdown-item">
+                                    <input type="checkbox" id="diff-SS" value="SS"> <label for="diff-SS">SS</label>
+                                </div>
+                                <div class="dropdown-item">
+                                    <input type="checkbox" id="diff-S" value="S"> <label for="diff-S">S</label>
+                                </div>
+                                <div class="dropdown-item">
+                                    <input type="checkbox" id="diff-A" value="A"> <label for="diff-A">A</label>
+                                </div>
+                                <div class="dropdown-item">
+                                    <input type="checkbox" id="diff-B" value="B"> <label for="diff-B">B</label>
+                                </div>
+                                <div class="dropdown-item">
+                                    <input type="checkbox" id="diff-C" value="C"> <label for="diff-C">C</label>
+                                </div>
+                                <div class="dropdown-actions">
+                                    <button class="select-all">全选</button>
+                                    <button class="deselect-all">全不选</button>
+                                    <button class="invert-selection">反选</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <div class="filter-label">学习次数</div>
+                        <div class="dropdown-container" data-filter="studyCount">
+                            <button class="dropdown-btn">选择学习次数</button>
+                            <div class="dropdown-content">
+                                <div class="dropdown-item">
+                                    <input type="checkbox" id="count-0" value="0"> <label for="count-0">0次</label>
+                                </div>
+                                <div class="dropdown-item">
+                                    <input type="checkbox" id="count-1" value="1"> <label for="count-1">1次</label>
+                                </div>
+                                <div class="dropdown-item">
+                                    <input type="checkbox" id="count-2" value="2"> <label for="count-2">2次</label>
+                                </div>
+                                <div class="dropdown-item">
+                                    <input type="checkbox" id="count-3" value="3"> <label for="count-3">3次</label>
+                                </div>
+                                <div class="dropdown-item">
+                                    <input type="checkbox" id="count-4" value="4"> <label for="count-4">4次</label>
+                                </div>
+                                <div class="dropdown-item">
+                                    <input type="checkbox" id="count-5" value="5"> <label for="count-5">5次</label>
+                                </div>
+                                <div class="dropdown-item">
+                                    <input type="checkbox" id="count-6-10" value="6-10"> <label for="count-6-10">6-10次</label>
+                                </div>
+                                <div class="dropdown-item">
+                                    <input type="checkbox" id="count-10plus" value="10+"> <label for="count-10plus">10次以上</label>
+                                </div>
+                                <div class="dropdown-actions">
+                                    <button class="select-all">全选</button>
+                                    <button class="deselect-all">全不选</button>
+                                    <button class="invert-selection">反选</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="actions">
+                <button class="btn btn-primary" id="create-card-btn">创建卡片</button>
+                <button class="btn btn-secondary" id="export-btn">导出数据</button>
+                <button class="btn btn-secondary" id="import-btn">导入数据</button>
+                <button class="btn btn-success" id="study-btn">学习</button>
+            </div>
+            
+            <div class="card-container" id="card-container"></div>
+        </div>
+
+        <div class="tab-content" id="logs-tab">
+            <h1>学习日志</h1>
+            <div class="logs-container" id="logs-container"></div>
+        </div>
+    </div>
+
+    <!-- 创建/编辑卡片模态框 -->
+    <div class="modal" id="card-modal">
+        <div class="modal-content">
+            <span class="close" id="close-card-modal">&times;</span>
+            <h2 id="card-modal-title">创建新卡片</h2>
+            
+            <form id="card-form">
+                <input type="hidden" id="card-id">
+                
+                <div class="form-group">
+                    <label class="form-label" for="card-front">卡片正面内容</label>
+                    <textarea class="form-control form-textarea" id="card-front" required></textarea>
+                    <button type="button" class="btn btn-secondary" id="front-image-btn" style="margin-top: 10px;">添加图片</button>
+                    <input type="file" id="front-image-input" accept="image/*" style="display: none;">
+                    <div id="front-image-preview"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="card-back">卡片反面内容</label>
+                    <textarea class="form-control form-textarea" id="card-back" required></textarea>
+                    <button type="button" class="btn btn-secondary" id="back-image-btn" style="margin-top: 10px;">添加图片</button>
+                    <input type="file" id="back-image-input" accept="image/*" style="display: none;">
+                    <div id="back-image-preview"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="category1">一级分类</label>
+                    <div class="form-select-container">
+                        <input class="form-control" id="category1" list="category1-list" placeholder="选择或创建新的一级分类">
+                        <datalist id="category1-list"></datalist>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="category2">二级分类</label>
+                    <div class="form-select-container">
+                        <input class="form-control" id="category2" list="category2-list" placeholder="选择或创建新的二级分类">
+                        <datalist id="category2-list"></datalist>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="category3">三级分类</label>
+                    <div class="form-select-container">
+                        <input class="form-control" id="category3" list="category3-list" placeholder="选择或创建新的三级分类">
+                        <datalist id="category3-list"></datalist>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="category4">四级分类</label>
+                    <div class="form-select-container">
+                        <input class="form-control" id="category4" list="category4-list" placeholder="选择或创建新的四级分类">
+                        <datalist id="category4-list"></datalist>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">难度</label>
+                    <div>
+                        <label class="form-check">
+                            <input type="radio" name="difficulty" value="SS" class="difficulty-radio"> SS
+                        </label>
+                        <label class="form-check">
+                            <input type="radio" name="difficulty" value="S" class="difficulty-radio"> S
+                        </label>
+                        <label class="form-check">
+                            <input type="radio" name="difficulty" value="A" class="difficulty-radio"> A
+                        </label>
+                        <label class="form-check">
+                            <input type="radio" name="difficulty" value="B" class="difficulty-radio"> B
+                        </label>
+                        <label class="form-check">
+                            <input type="radio" name="difficulty" value="C" class="difficulty-radio" checked> C
+                        </label>
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+                    <button type="button" class="btn btn-warning" id="swap-content-btn" style="flex: 1;">正反调整</button>
+                    <button type="submit" class="btn btn-primary" style="flex: 1;">保存卡片</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 导入数据模态框 -->
+    <div class="modal" id="import-modal">
+        <div class="modal-content">
+            <span class="close" id="close-import-modal">&times;</span>
+            <h2>导入数据</h2>
+            
+            <div class="form-group">
+                <label class="form-label">选择导入文件</label>
+                <div class="file-input-container">
+                    <input type="file" id="import-file" accept=".json" class="file-input">
+                    <button class="btn btn-secondary" style="width: 100%;">选择文件</button>
+                </div>
+                <div id="import-file-name" style="margin-top: 5px;"></div>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-check">
+                    <input type="checkbox" id="import-replace"> 替换现有数据（不勾选则追加）
+                </label>
+            </div>
+            
+            <div id="import-error" class="error" style="display: none;"></div>
+            <div id="import-success" class="success" style="display: none;"></div>
+            
+            <button id="import-submit" class="btn btn-primary" style="width: 100%;" disabled>导入</button>
+        </div>
+    </div>
+
+    <!-- 学习模式 -->
+    <div class="study-container" id="study-container">
+        <div class="study-content">
+            <div class="study-card">
+                <div class="study-front" id="study-front"></div>
+                <div class="study-back" id="study-back"></div>
+                
+                <div class="study-difficulty" id="study-difficulty-container" style="display: none;">
+                    <div>调整难度：</div>
+                    <div>
+                        <label class="form-check">
+                            <input type="radio" name="study-difficulty" value="SS" class="difficulty-radio"> SS
+                        </label>
+                        <label class="form-check">
+                            <input type="radio" name="study-difficulty" value="S" class="difficulty-radio"> S
+                        </label>
+                        <label class="form-check">
+                            <input type="radio" name="study-difficulty" value="A" class="difficulty-radio"> A
+                        </label>
+                        <label class="form-check">
+                            <input type="radio" name="study-difficulty" value="B" class="difficulty-radio"> B
+                        </label>
+                        <label class="form-check">
+                            <input type="radio" name="study-difficulty" value="C" class="difficulty-radio"> C
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="study-actions">
+                    <button class="btn btn-primary" id="flip-btn">翻转</button>
+                    <button class="btn btn-success" id="next-btn" style="display: none;">下一张</button>
+                    <button class="btn btn-danger" id="close-study-btn">关闭</button>
+                </div>
+            </div>
+            
+            <div class="study-stats" id="study-stats">
+                <h3>学习概况</h3>
+                <div id="study-progress">已学习：0 / 0</div>
+                <div>难度统计：</div>
+                <div>SS级：<span id="count-SS">0</span></div>
+                <div>S级：<span id="count-S">0</span></div>
+                <div>A级：<span id="count-A">0</span></div>
+                <div>B级：<span id="count-B">0</span></div>
+                <div>C级：<span id="count-C">0</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 编辑日志模态框 -->
+    <div class="modal" id="log-edit-modal">
+        <div class="modal-content">
+            <span class="close" id="close-log-edit-modal">&times;</span>
+            <h2>编辑日志</h2>
+            
+            <form id="log-edit-form">
+                <input type="hidden" id="log-edit-id">
+                
+                <div class="form-group">
+                    <label class="form-label" for="log-edit-notes">备注</label>
+                    <textarea class="form-control form-textarea" id="log-edit-notes"></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;">保存</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script>
+        // 注册Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => {
+                        console.log('Service Worker registered: ', registration);
+                    })
+                    .catch(error => {
+                        console.log('Service Worker registration failed: ', error);
+                    });
+            });
+        }
+
+        // 监听安装事件
+        let deferredPrompt;
+        
+        window.addEventListener('beforeinstallprompt', (e) => {
+            // 阻止Chrome 67及更早版本自动显示安装提示
+            e.preventDefault();
+            // 存储事件，以便稍后触发
+            deferredPrompt = e;
+            // 可选：显示自定义的"添加到主屏幕"提示
+            
+            // 创建一个添加到主屏幕的提示元素（如果不存在）
+            if (!document.getElementById('install-banner')) {
+                const banner = document.createElement('div');
+                banner.id = 'install-banner';
+                banner.className = 'install-banner';
+                banner.innerHTML = `
+                    <div>将应用添加到主屏幕以便离线使用</div>
+                    <button id="install-btn" class="btn btn-primary">安装</button>
+                    <button id="dismiss-btn" class="btn btn-secondary">稍后再说</button>
+                `;
+                document.body.appendChild(banner);
+                
+                // 添加按钮点击事件
+                document.getElementById('install-btn').addEventListener('click', () => {
+                    banner.style.display = 'none';
+                    // 显示安装提示
+                    deferredPrompt.prompt();
+                    // 等待用户回应提示
+                    deferredPrompt.userChoice.then((choiceResult) => {
+                        if (choiceResult.outcome === 'accepted') {
+                            console.log('用户接受了安装提示');
+                        } else {
+                            console.log('用户取消了安装提示');
+                        }
+                        deferredPrompt = null;
+                    });
+                });
+                
+                document.getElementById('dismiss-btn').addEventListener('click', () => {
+                    banner.style.display = 'none';
+                });
+            } else {
+                document.getElementById('install-banner').style.display = 'flex';
+            }
+        });
+    </script>
+</body>
+</html>
